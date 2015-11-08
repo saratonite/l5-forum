@@ -23,13 +23,22 @@
     </head>
     <body>
         <div class="container">
-           <h1>L5 Forum</h1>
+           <h1><a href="{{ url() }}">L5 Forum</a></h1>
+           <ul class="nav nav-tabs">
+               <li><a href="{{ url('ask') }}"> Ask ?</a></li>
+                @if (Auth::check()) 
+                <li><a href="{{ url('logout') }}">Log out</a></li>
+                @else
+                <li><a href="{{ url('login') }}">Log in</a></li>
+                @endif
+           </ul>
+           
            <div class="row">
-               <div class="col-md-3">
+               <div class="col-md-2">
                    @yield('side-content')
                </div>
 
-               <div class="col-md-9">
+               <div class="col-md-8">
                    @yield('main')
                </div>
 

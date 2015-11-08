@@ -6,14 +6,35 @@
 </head>
 <body>
 
-	<form action="post">
-	{{ csrf_field()}}
-		<label for="">Email</label>
-		<input type="text" name="email">
-		<label>Password</label>
-		<input type="password">
+	
 
-	</form>
+<form method="POST" action="{{ url('login') }}">
+    {!! csrf_field() !!}
+
+    <div>
+        Email
+        <input type="email" name="email" value="{{ old('email') }}">
+        @if($errors->has('email'))
+        <span>{{ $errors->first('email') }}</span>
+        @endif
+    </div>
+
+    <div>
+        Password
+        <input type="password" name="password" id="password">
+        @if($errors->has('password'))
+        <span>{{ $errors->first('password') }}</span>
+        @endif
+    </div>
+
+    <div>
+        <input type="checkbox" name="remember"> Remember Me
+    </div>
+
+    <div>
+        <button type="submit">Login</button>
+    </div>
+</form>
 	
 </body>
 </html>
