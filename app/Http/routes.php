@@ -15,7 +15,7 @@ Route::get('/','ForumController@index');
 
 
 Route::get('question/{id}','QuestionController@show');
-Route::post('question/reply/{id}','QuestionController@reply');
+Route::post('question/reply/{id}',['middleware'=>'auth','uses'=>'QuestionController@reply']);
 
 Route::get('ask',['middleware'=>'auth','uses'=>'QuestionController@index']);
 Route::post('ask',['middleware'=>'auth','uses'=>'QuestionController@store']);

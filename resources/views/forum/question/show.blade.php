@@ -36,6 +36,7 @@
 		@else
 		<p class="alert alert-warning"> No answers found :(</p>
 		@endif
+		@if(Auth::check())
 		<h2>Write Answer</h2>
 		<form action="{{ url('question/reply/'.$question->id)}}" method="post">
 			@if(Session::has('message'))
@@ -56,5 +57,8 @@
 		<input class="btn btn-success" type="submit" >
 	</div>
 		</form>
+	@else
+	<p class="alert alert-info" style="margin-top:10px">Write answer , please login.</p>
+	@endif
 	
 @endsection 
