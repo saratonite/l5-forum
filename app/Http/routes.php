@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('login',function(){
+	return "Login";
+});
+Route::post('login',function(){
+
+});
