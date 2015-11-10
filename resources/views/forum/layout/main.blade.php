@@ -30,6 +30,7 @@
                 <li><a href="{{ url('logout') }}">Log out</a></li>
                 @else
                 <li><a href="{{ url('login') }}">Log in</a></li>
+                <li><a href="{{ url('register') }}">Register</a></li>
                 @endif
            </ul>
            

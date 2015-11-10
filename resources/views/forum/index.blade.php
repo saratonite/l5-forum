@@ -16,12 +16,12 @@
 		  	<p style="float:right" class="text-muted">Posted by <a href="{{ url('authors/'.$thread->user->id) }}">{{$thread->user->name}} </a> on {{ Carbon\Carbon::parse($thread->created_at)->format('d-m-Y')}} </p>
 		    <h4 class="media-heading"><a href="{{ url('question/'.$thread->id) }}">{{$thread->title}}</a></h4>
 		    <p>{{ str_limit($thread->content,160) }}</p>
-		    <p style="float:right"><a href="{{ url('answer/'.$thread->id) }}">Write Answer?</a></p>
+		    <p style="float:right"><a href="{{ url('question/'.$thread->id) }}#write">Write Answer?</a></p>
 		  </div>
 		</div>
 	   @endforeach
 	   @else
-		<p class="alert alert-info"> No questions found. <a class="btn btn-success btn-sm" href="{{ url('user/questions/post') }}"> Ask one ?</a></p>
+		<p class="alert alert-info"> No questions found. <a class="btn btn-success btn-sm" href="{{ url('ask') }}"> Ask one ?</a></p>
 	@endif
 
 	{!! $threads->render() !!}

@@ -34,10 +34,10 @@
 				</div>
 			@endforeach
 		@else
-		<p class="alert alert-warning"> No answers found :(</p>
+		<p id="#write" class="alert alert-warning"> No answers found :(</p>
 		@endif
 		@if(Auth::check())
-		<h2>Write Answer</h2>
+		<h2 id="#write">Write Answer</h2>
 		<form action="{{ url('question/reply/'.$question->id)}}" method="post">
 			@if(Session::has('message'))
 		<p class="alert alert-success">{{ Session::get('message') }}</p>
