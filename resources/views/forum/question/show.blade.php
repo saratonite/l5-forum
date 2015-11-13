@@ -58,7 +58,6 @@
 	</div>
 		</form>
 	@else
-	<p class="alert alert-info" style="margin-top:10px">Write answer , please login.</p>
+	<p class="alert alert-info" style="margin-top:10px">Write answer , please <a href="{{url('login')}}">login</a>.</p>
 	@endif
-	
 @endsection 
